@@ -21,6 +21,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        buildTypes.each {
+            it.resValue "string", "ADMOBS_APP_ID", getKey("ADMOB_KEY")
+        }
     }
 }
 
@@ -40,4 +43,10 @@ dependencies {
     })
 
     testImplementation 'junit:junit:4.12'
+}
+
+static def getKey(String property) {
+    Properties properties = new Properties()
+    properties.load(new FileInputStream("ENV_KEYS"))
+    return "\"" + properties.getProperty(property) +"\""
 }
