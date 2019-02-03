@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">JokeDisplayer</string>
     <string name="title_activity_newjoke">NewJoke</string>
+    <string name="newJokeKey">NEW_JOKE_KEY</string>
 </resources>
