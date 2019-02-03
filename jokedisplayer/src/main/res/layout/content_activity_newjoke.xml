@@ -8,4 +8,18 @@
     tools:context=".NewJoker"
     tools:showIn="@layout/activity_newjoke">
 
+    <TextView
+        android:id="@+id/tv_newJoke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/lorem" />
 </android.support.constraint.ConstraintLayout>
