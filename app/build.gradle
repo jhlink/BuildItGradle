@@ -50,8 +50,8 @@ dependencies {
     implementation project(':jokedisplayer')
 }
 
-static def getKey(String property) {
+def getKey(String property) {
     Properties properties = new Properties()
-    properties.load(new FileInputStream("ENV_KEYS"))
-    return "\"" + properties.getProperty(property) +"\""
+    properties.load(project.rootProject.file('ENV_KEYS').newDataInputStream())
+    return properties.getProperty(property)
 }
