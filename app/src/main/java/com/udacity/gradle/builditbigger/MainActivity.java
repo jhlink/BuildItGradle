@@ -1,7 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
@@ -9,8 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.oliverh.jokedisplayer.NewJoker;
-import com.example.oliverh.jokeprovider.JokeProvider;
 import com.google.android.gms.ads.MobileAds;
 
 
@@ -22,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MobileAds.initialize(this, getString(R.string.ADMOBS_APP_ID));
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
     }
 
 
@@ -49,16 +45,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        JokeProvider joker = new JokeProvider();
-        String resp = joker.getJoke();
-
-        String intentStringKey = getString(R.string.newJokeKey);
-
-        Intent newJokeIntent = new Intent(this, NewJoker.class);
-        newJokeIntent.putExtra(intentStringKey, resp);
-
-        startActivity(newJokeIntent);
-
-        //Toast.makeText(this, resp, Toast.LENGTH_SHORT).show();
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
     }
 }
