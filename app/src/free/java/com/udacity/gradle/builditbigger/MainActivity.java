@@ -10,7 +10,6 @@ import android.view.View;
 
 import com.google.android.gms.ads.MobileAds;
 
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
