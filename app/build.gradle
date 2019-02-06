@@ -67,7 +67,7 @@ dependencies {
 }
 
 task testAll(dependsOn: ['test', 'connectedAndroidTest']) {
-    shouldRunAfter "setupGCE"
+    mustRunAfter "setupGCE"
     group = 'verification'
     description = "Run all tests"
     finalizedBy "tearDownGCE"
