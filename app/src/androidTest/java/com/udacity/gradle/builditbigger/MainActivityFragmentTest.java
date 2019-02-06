@@ -28,10 +28,6 @@ public class MainActivityFragmentTest {
     @Rule
     public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
     @Test
     public void clickTellJokeButton_ShowsNonEmptyString() {
         onView(withId(R.id.btn_getJoke)).perform(click());
@@ -55,10 +51,5 @@ public class MainActivityFragmentTest {
         public void describeTo(Description description) {
 
         }
-    }
-
-
-    @After
-    public void tearDown() throws Exception {
     }
 }
