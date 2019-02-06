@@ -1,6 +1,5 @@
 package com.udacity.gradle.builditbigger.backend;
 
-import com.example.oliverh.jokeprovider.Joke;
 import com.example.oliverh.jokeprovider.JokeProvider;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
