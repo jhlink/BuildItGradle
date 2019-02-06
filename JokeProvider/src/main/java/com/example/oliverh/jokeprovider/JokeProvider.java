@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class JokeProvider {
-    static private ArrayList<Joke> jokeList;
+    static private ArrayList<String> jokeList;
     private Random randomGenerator;
 
     public JokeProvider() {
@@ -16,23 +16,14 @@ public class JokeProvider {
 
     private void initializeJokeList() {
         jokeList = new ArrayList<>();
-        jokeList.add(new Joke("What did the baby digital watch say to the mommy analog watch?",
-                "Look Ma, no hands!"));
-        jokeList.add(new Joke("Why did the crab never share?",
-                "Because he's shellfish!"));
-        jokeList.add(new Joke("What's the smartest animal?",
-                "A fish because they stay in schools!"));
-        jokeList.add(new Joke("How much money does a skunk have?",
-                "One scent!"));
-        jokeList.add(new Joke("What vegetables do librarians like?",
-                "Quiet peas."));
-        jokeList.add(new Joke("Why didn't the sun go to college?",
-                "Because it already had a million degrees!"));
-        jokeList.add(new Joke("What do you call friends who love math?",
-                "Algebros"));
+        jokeList.add("My email password has been hacked. That's the third time I've had to rename the cat.");
+        jokeList.add("Did you hear about the monkeys who shared an Amazon account? They were Prime mates.");
+        jokeList.add("My name is Microsoft. Can I crash at your place tonight?");
+        jokeList.add("People act like the North Pole and the South Pole are exactly the same, but really, there's a whole world of difference between them.");
+        jokeList.add("If you sit down to enjoy a hot cup of coffee, then your boss will ask you to do something that will last until the coffee is cold.");
     }
 
-    public Joke getJoke() {
+    public String getJoke() {
         if ( jokeList == null ) {
             initializeJokeList();
         }
