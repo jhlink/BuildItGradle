@@ -64,31 +64,26 @@ dependencies {
     implementation project(':jokedisplayer')
 }
 
-task testAll(dependsOn: ['test', 'connectedAndroidTest']) {
-    mustRunAfter "setupGCE"
-    group = 'verification'
-    description = "Run all tests"
-    finalizedBy "tearDownGCE"
-}
-
-task setupGCE {
-    doFirst {
-        task('appengineStart')
-        println("Starting Engine")
-    }
-}
-
-task tearDownGCE {
-    doLast {
-        task('appengineStop')
-        println("Stopping Engine")
-    }
-}
-
 task setupGceAndTestAll {
     group = 'verification'
-    dependsOn = ["setupGCE", "testAll", "tearDownGCE"]
+    description = "Run instrumented tests"
+    dependsOn ':backend:appengineStart'
+    mustRunAfter ':backend:appengineStart'
+    dependsOn 'connectedAndroidTest'
+    finalizedBy ':backend:appengineStop'
+
 }
+
+//  Writing this down for future reference. Suggested by Udacity reviewer.
+//      Incredibly simple, and definitely a snippet worth saving.
+//task customTask {
+//    group = 'verification'
+//    dependsOn(":backend:appengineStart")
+//    mustRunAfter(":backend:appengineStart")
+//    dependsOn("connectedAndroidTest")
+//    finalizedBy ":backend:appengineStop"
+//}
+
 
 def getKey(String property) {
     Properties properties = new Properties()
