@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger.backend;
 
+import com.example.oliverh.jokeprovider.Joke;
 import com.example.oliverh.jokeprovider.JokeProvider;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
@@ -20,12 +21,11 @@ import javax.inject.Named;
 public class MyEndpoint {
 
     @ApiMethod(name = "getJoke")
-    public MyBean getJoke() {
+    public Joke getJoke() {
         JokeProvider joker = new JokeProvider();
-        MyBean response = new MyBean();
-        response.setData(joker.getJoke());
+        Joke newJoke = joker.getJoke();
 
-        return response;
+        return newJoke;
     }
 
 
