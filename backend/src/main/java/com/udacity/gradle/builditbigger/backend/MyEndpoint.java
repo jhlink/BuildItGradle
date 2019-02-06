@@ -18,10 +18,10 @@ import com.google.api.server.spi.config.ApiNamespace;
 public class MyEndpoint {
 
     @ApiMethod(name = "getJoke")
-    public MyBean getJoke() {
+    public JokeHolder getJoke() {
         JokeProvider joker = new JokeProvider();
         String newJoke = joker.getJoke();
-        MyBean response = new MyBean();
+        JokeHolder response = new JokeHolder();
         response.setData(newJoke);
 
         return response;
