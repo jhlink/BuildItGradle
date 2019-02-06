@@ -10,8 +10,8 @@ public class JokeProvider {
     public JokeProvider() {
         if ( jokeList == null )  {
             initializeJokeList();
-            randomGenerator = new Random();
         }
+        randomGenerator = new Random();
     }
 
     private void initializeJokeList() {
