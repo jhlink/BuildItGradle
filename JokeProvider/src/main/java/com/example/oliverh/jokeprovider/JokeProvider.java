@@ -7,7 +7,7 @@ public class JokeProvider {
     static private ArrayList<Joke> jokeList;
     private Random randomGenerator;
 
-    JokeProvider() {
+    public JokeProvider() {
         if ( jokeList == null )  {
             initializeJokeList();
             randomGenerator = new Random();
