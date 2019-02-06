@@ -1,9 +1,11 @@
 package com.example.oliverh.jokeprovider;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class JokeProvider {
     static private ArrayList<Joke> jokeList;
+    private Random randomGenerator;
 
     JokeProvider() {
         if ( jokeList == null )  {
@@ -22,10 +24,20 @@ public class JokeProvider {
                     "Because it already had a million degrees!"));
             jokeList.add(new Joke("What do you call friends who love math?",
                     "Algebros"));
+
+            randomGenerator = new Random();
         }
     }
 
     public String getJoke() {
        return "What's a joke?";
+    }
+
+    private int randomJokeListIndex() {
+        if ( jokeList == null ) {
+            return 0;
+        }
+
+        return randomGenerator.nextInt(jokeList.size());
     }
 }
