@@ -35,6 +35,11 @@ public class MainActivityFragmentTest {
     @Test
     public void clickTellJokeButton_ShowsNonEmptyString() {
         onView(withId(R.id.btn_getJoke)).perform(click());
+
+        // Note: Originally, I had checked joke textview  with a  hardcoded string, but after introducing
+        //  a random generator for joke selection, explicit text matching doesn't quite work consistently.
+        //  Instead, I detect whether the text inside the textview is empty or not using a custom
+        //  matcher.
         onView(withId(R.id.tv_newJoke)).check(matches(new TextViewValueExistenceMatcher()));
     }
 
@@ -51,7 +56,6 @@ public class MainActivityFragmentTest {
 
         }
     }
-
 
 
     @After
