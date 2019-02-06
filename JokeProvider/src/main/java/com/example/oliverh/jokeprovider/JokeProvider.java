@@ -32,8 +32,14 @@ public class JokeProvider {
                 "Algebros"));
     }
 
-    public String getJoke() {
-       return "What's a joke?";
+    public Joke getJoke() {
+        if ( jokeList == null ) {
+            initializeJokeList();
+        }
+
+        int selectedJokeIndex = randomJokeListIndex();
+
+        return jokeList.get(selectedJokeIndex);
     }
 
     private int randomJokeListIndex() {
